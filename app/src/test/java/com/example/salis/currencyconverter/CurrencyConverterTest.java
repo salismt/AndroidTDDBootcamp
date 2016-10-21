@@ -14,20 +14,27 @@ public class CurrencyConverterTest {
     @Test
     public void shouldConvert1INRTo200IDR() throws Exception {
 
-        assertEquals(CurrencyConverter.convertINRToIDR(1), 200, 1);
+        assertEquals(200, CurrencyConverter.convertINRToIDR(1), 1);
 
     }
 
     @Test
     public void shouldConvert100INRTo20000IDR() throws Exception {
 
-        assertEquals(CurrencyConverter.convertINRToIDR(100), 20000, 1);
+        assertEquals(20000, CurrencyConverter.convertINRToIDR(100), 1);
     }
 
     @Test
     public void shouldConvert200IDRTo1INR() throws Exception {
 
-        assertEquals(CurrencyConverter.convertIDRToINR(200), 1, 1);
+        assertEquals(1, CurrencyConverter.convertIDRToINR(200), 1);
 
+    }
+
+    @Test
+    public void shouldConvert1IDRTo005INR() throws Exception {
+
+        // should return 0.005 INR
+        assertEquals(0.005, CurrencyConverter.convertIDRToINR(1), 0.0001);
     }
 }
